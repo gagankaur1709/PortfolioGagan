@@ -1,4 +1,4 @@
-"use client"; // Add this directive at the very top
+"use client";
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -22,10 +22,10 @@ const IntroductionSection = () => {
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
               Hi, I’m <span className="text-indigo-400">Gagan</span>
               <br />
-              Java & Frontend Developer
+              Software Development Engineer
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl mx-auto md:mx-0">
-              I build robust backend systems and beautiful, responsive user interfaces.
+            Aliquam tristique, ipsum eget vulputate porta, lectus libero tempus dui, et posuere nunc metus ut diam. Phasellus vel dolor lorem. Vestibulum vulputate maximus eros vitae interdum. Aenean pharetra odio viverra mi faucibus consectetur. Suspendisse aliquet libero eget mollis molestie. Donec id arcu id magna malesuada sodales. In vel ultrices nisi. Cras vel metus enim. Morbi nulla dui, pretium at iaculis vitae, sagittis ac ex. Curabitur congue iaculis nisl, vel convallis velit varius sed. Donec vitae accumsan ante.
             </p>
             
             <div className="flex justify-center md:justify-start gap-4">
@@ -51,7 +51,7 @@ const IntroductionSection = () => {
 
                 <div className="absolute inset-0 bg-indigo-500 rounded-full blur-2xl opacity-40 animate-pulse"></div>
                 <img 
-                    src="https://placehold.co/400x400/1e293b/a5b4fc?text=Your\nImage" 
+                    src="https://placehold.co/400x400/1e293b/a5b4fc?text=Image" 
                     alt="A stylish profile image"
                     className="relative w-full h-full object-cover rounded-full border-4 border-gray-700 shadow-2xl"
                     onError={(e) => { e.currentTarget.src = 'https://placehold.co/400x400/1e293b/a5b4fc?text=Image+Error'; }}
