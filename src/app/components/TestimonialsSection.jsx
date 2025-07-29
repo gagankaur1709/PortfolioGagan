@@ -5,24 +5,18 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
   {
-    quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac sagittis lacus, sit amet porta risus. Donec ultricies, dolor vel fringilla ultrices, metus nulla posuere ligula, a placerat ex est ac felis. Cras blandit purus vel orci viverra eleifend. Nam faucibus tortor augue, at luctus elit efficitur at. Donec a ullamcorper purus, eu tristique orci.",
-    name: "Jane Doe",
+    quote: "I have had the opportunity to work closely with Gagandeep during her time at Sixt and I am confident that she has the skills, knowledge and determination essential for advancing her career. As SDE-1, she consistently demonstrated remarkable technical and professional abilities. Her passion towards software engineering was evident in the high quality of work she delivered as well as her eagerness to explore complex topics beyond the basic requirements. One of her most notable qualities is her ability to work both independently and collaboratively. Gagandeep demonstrated leadership, clear communication, and critical, innovative thinking, which resulted in successful project deliverables. These skills will undoubtedly contribute to her success in the demanding environment of graduate studies",
+    name: "Manisha Paswan",
     title: "Lead Engineer",
-    image: "https://placehold.co/100x100/a5b4fc/1e293b?text=JD",
+    image: "https://placehold.co/100x100/a5b4fc/1e293b?text=MP",
   },
   {
-    quote: "Cras ultricies tristique pulvinar. Etiam posuere quam et ligula elementum, sed posuere est auctor. Suspendisse pretium purus et leo pretium aliquet. Donec in tellus at tortor blandit vestibulum in quis tortor. Nam fermentum diam quis ante finibus tempus nec vel erat.",
-    name: "John Smith",
-    title: "Product Manager",
-    image: "https://placehold.co/100x100/a5b4fc/1e293b?text=JS",
+    quote: "I’ve worked with Gagandeep in the same team for over two years, and I can genuinely say she’s a standout professional. She picks up new skills rapidly and has a solid technical background, making her a competent engineer. She’s also curious and proactive, constantly exploring new technologies and taking the initiative to solve complex problems. Her collaborative spirit and dedication make her a valuable asset to any team.",
+    name: "Navneetha Rajan",
+    title: "Software Engineer",
+    image: "https://placehold.co/100x100/a5b4fc/1e293b?text=NR",
   },
 ];
-
-const QuoteIcon = () => (
-    <svg width="44" height="44" viewBox="0 0 24 24" className="absolute top-0 left-0 -mt-2 -ml-2 text-gray-800" fill="currentColor">
-        <path d="M6.5 10c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zm11 0c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM6 15c-3.31 0-6 2.69-6 6h12c0-3.31-2.69-6-6-6zm11 0c-3.31 0-6 2.69-6 6h12c0-3.31-2.69-6-6-6z"></path>
-    </svg>
-);
 
 
 const TestimonialsSection = () => {
@@ -59,21 +53,21 @@ const TestimonialsSection = () => {
     >
       <div className="container mx-auto px-6">
         <motion.h2
-          className="text-3xl md:text-4xl font-bold text-center mb-16 text-indigo-400"
+          className="text-3xl md:text-4xl font-bold text-center mb-16 text-zinc-200"
           variants={{ hidden: { opacity: 0, y: -20 }, visible: { opacity: 1, y: 0 } }}
         >
           What Others Say
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
               className="bg-gray-800/50 p-8 rounded-lg shadow-lg relative"
               variants={cardVariants}
             >
-              <QuoteIcon />
-              <p className="text-gray-300 italic mb-6 z-10 relative">
+           
+              <p className="text-white-300 italic mb-6 z-10 relative">
                 "{testimonial.quote}"
               </p>
               <div className="flex items-center">
