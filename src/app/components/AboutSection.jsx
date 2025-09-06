@@ -68,12 +68,14 @@ const AboutSection = () => {
         <div className="flex flex-col md:flex-row gap-12 lg:gap-16 items-start">
           <motion.div className="md:w-1/2 space-y-6" variants={sectionVariants}>
             <motion.p className="text-lg text-zinc-200 leading-relaxed" variants={itemVariants}>
-            I'm a systems engineer who translates legacy code into the future. By day, I build and scale robust Java microservices for global platforms, ensuring they're fast, efficient, and ready for whatever comes next. Think of me as a digital archaeologist, modernizing the past to power tomorrow.            </motion.p>
+            As a Software Development Engineer, I specialize in architecting and scaling robust backend systems. My core expertise lies in building enterprise-level Java microservices for global platforms, with a focus on modernizing legacy codebases to improve efficiency, performance, and maintainability for future demands.
+           </motion.p>
             <motion.p className="text-lg text-zinc-200 leading-relaxed" variants={itemVariants}>
-            When I'm not wrangling enterprise systems, I'm in my digital lab teaching AI new tricks. From building apps that connect students to deploying intelligent bug-classifiers, I love crafting smart solutions. It’s all about finding elegant code for complex, real-world puzzles.             
+            While my primary focus is backend engineering, I am passionate about applying my skills to the field of Artificial Intelligence. I enjoy diving into complex challenges to create intelligent, data-driven solutions, from developing AI-powered applications to deploying effective bug-classification tools.
             </motion.p>
              <motion.p className="text-lg text-zinc-200 leading-relaxed" variants={itemVariants}>
-             Ultimately, I'm driven by a relentless curiosity to explore the tech frontier. From the depths of distributed systems to the nuances of prompt engineering, I'm constantly tinkering and learning. I believe the best way to predict the future is to build it, one line of code at a time.             </motion.p>
+             I am driven by a commitment to continuous learning and exploring the intersection of new technologies. Whether it's mastering the complexities of distributed systems or leveraging prompt engineering, my goal is to apply cutting-edge techniques to build impactful and innovative software.     
+             </motion.p>
           </motion.div>
 
           <motion.div className="md:w-1/2" variants={itemVariants}>
