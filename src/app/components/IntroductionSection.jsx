@@ -21,7 +21,7 @@ const IntroductionSection = () => {
         transition={{ duration: 1.5}}
       >
         <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-4">
-          Gagandeep Kaur
+          Hi, I am Gagan
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
           Software Development Engineer specializing in scalable backend systems and AI-powered tools.
