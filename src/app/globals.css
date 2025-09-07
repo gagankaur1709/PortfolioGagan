@@ -5,6 +5,10 @@
   --foreground: #171717;
 }
 
+@theme {
+  --font-family-nothing-you-could-do: var(--font-nothing-you-could-do);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

@@ -21,7 +21,7 @@ const IntroductionSection = () => {
         transition={{ duration: 1.5}}
       >
         <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-4">
-          Hi, I am Gagan
+          Hi, I am <span className="text-indigo-400" style={{ fontFamily: 'var(--font-nothing-you-could-do)' }}>Gagan</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
           Software Development Engineer specializing in scalable backend systems and AI-powered tools.
