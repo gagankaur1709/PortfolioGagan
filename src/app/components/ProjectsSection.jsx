@@ -90,7 +90,7 @@ const ProjectsSection = () => {
                     className="text-3xl md:text-4xl font-bold text-center mb-16 text-indigo-400"
                     variants={{ hidden: { opacity: 0, y: -20 }, visible: { opacity: 1, y: 0 } }}
                 >
-                    My Projects
+                    What I've Built
                 </motion.h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
