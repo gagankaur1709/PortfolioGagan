@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGraduationCap, FaUniversity, FaCalendarAlt, FaMapMarkerAlt, FaBriefcase } from 'react-icons/fa';
+import { FaGraduationCap, FaUniversity, FaCalendarAlt, FaMapMarkerAlt, FaBriefcase, FaTrophy, FaMedal, FaUsers, FaCode, FaLaptopCode, FaRocket, FaBrain, FaAward, FaCertificate, FaGlobe, FaLightbulb, FaCogs } from 'react-icons/fa';
 
-const journeyData = [
+const timelineEvents = [
   {
     type: "education",
     title: "Master of Science",
@@ -12,33 +12,26 @@ const journeyData = [
     organization: "University of Birmingham",
     location: "Birmingham, United Kingdom",
     year: "2024 - 2025",
-    description: "Specialized in advanced algorithms, machine learning, and distributed systems. Focused on cutting-edge research in artificial intelligence and software engineering methodologies.",
-    highlights: [
-      "Human Computer Interaction",
+    icon: <FaGraduationCap className="text-2xl" />,
+    highlights: [ "Human Computer Interaction",
       "Distributed Systems",
       "Intelligent Software Engineering",
       "Advanced Networking",
       "Designing and Managing Secured Systems",
-      "Algorithms and Complexity"
-    ],
-    icon: <FaGraduationCap className="text-2xl" />
+      "Algorithms and Complexity" ],
   },
   {
     type: "experience",
     title: "Software Development Engineer I",
-    subtitle: "Backend System",
     organization: "Sixt Research and Development",
     location: "Bengaluru, India",
     year: "2022 - 2024",
-    description: "Developed and maintained robust backend systems for global car rental platform. Focused on microservices architecture, API development, and system optimization.",
-    highlights: [
-      "Microservices Architecture",
+    icon: <FaLaptopCode className="text-2xl" />,
+    highlights: [ "Microservices Architecture",
       "Java Development",
       "API Design & Development",
       "System Optimization",
-      "CI/CD Implementation"
-    ],
-    icon: <FaBriefcase className="text-2xl" />
+      "CI/CD Implementation" ],
   },
   {
     type: "education",
@@ -47,16 +40,48 @@ const journeyData = [
     organization: "Dayananda Sagar Academy of Technology and Management",
     location: "Bengaluru, India", 
     year: "2018 - 2022",
-    description: "Comprehensive foundation in computer science fundamentals, software development, data structures, algorithms, and system design. Graduated with strong technical expertise.",
-    highlights: [
-      "Web Development",
+    icon: <FaRocket className="text-2xl" />,
+    highlights: [ "Web Development",
       "Data Structures & Algorithms",
       "Operating Systems",
       "Big Data",
       "Database Management Systems",
-      "Python Programming"
-    ],
-    icon: <FaGraduationCap className="text-2xl" />
+      "Python Programming"],
+  }
+];
+
+const extraDetails = [
+  {
+    type: "profile",
+    title: "LeetCode Profile",
+    description: "Actively solving data structure and algorithm problems, continuously honing my problem-solving skills.",
+    link: "https://leetcode.com/u/gaganKaur/",
+    icon: <FaCogs />
+  },
+  {
+    type: "profile",
+    title: "Blog",
+    description: "A blog for software engineers looking to improve their testing and monitoring practices. Learn how to build more reliable integration tests with Testcontainers.",
+    link: "https://www.sixt.tech/authors/gagandeepkaur",
+    icon: <FaGlobe />
+  },
+  {
+    type: "achievement",
+    title: "People's Choice Award",
+    description: "Won for building StudySync, an AI-powered app that matches students with ideal study partners at Birminghack 1.0.",
+    icon: <FaTrophy />
+  },
+  {
+    type: "achievement",
+    title: "Department Topper",
+    description: "Awarded the gold medal for academic excellence in the Department of Computer Science (Batch of 2022).",
+    icon: <FaMedal />
+  },
+  {
+    type: "achievement",
+    title: "Student Coordinator",
+    description: "Led the 33rd state-level Computer Science Society of India convention during undergraduate studies.",
+    icon: <FaUsers />
   }
 ];
 
@@ -65,9 +90,7 @@ const EducationSection = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -76,11 +99,15 @@ const EducationSection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
+  };
+
+  const typeStyles = {
+    education: { dot: 'bg-indigo-500', icon: 'text-indigo-400', tagBg: 'bg-indigo-900/50', tagText: 'text-indigo-300' },
+    experience: { dot: 'bg-emerald-500', icon: 'text-emerald-400', tagBg: 'bg-green-900/50', tagText: 'text-emerald-300' },
+    achievement: { dot: 'bg-amber-500', icon: 'text-amber-400' },
+    profile: { dot: 'bg-cyan-500', icon: 'text-cyan-400' },
   };
 
   return (
@@ -89,7 +116,7 @@ const EducationSection = () => {
       className="py-20 md:py-28 bg-gray-950 text-white"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
       variants={sectionVariants}
     >
       <div className="container mx-auto px-6">
@@ -100,58 +127,29 @@ const EducationSection = () => {
           My Journey
         </motion.h2>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-indigo-500"></div>
-            
-            {journeyData.map((item, index) => (
+            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-indigo-500/30"></div>
+            {timelineEvents.map((item, index) => (
               <motion.div
                 key={index}
                 className="relative flex items-start mb-12 last:mb-0"
-                variants={itemVariants}>
-                <div className={`absolute left-6 w-4 h-4 rounded-full border-4 border-gray-950 z-10 ${
-                  item.type === 'experience' ? 'bg-emerald-500' : 'bg-indigo-500'
-                }`}></div>
-                <div className="ml-16 bg-gray-800 rounded-lg p-6 w-full">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-1">
-                        {item.title}
-                      </h3>
-                      <h4 className="text-lg font-semibold text-indigo-400 mb-2">
-                        {item.subtitle}
-                      </h4>
-                    </div>
-                    <div className={`${item.type === 'experience' ? 'text-emerald-400' : 'text-indigo-400'}`}>
-                      {item.icon}
-                    </div>
+                variants={itemVariants}
+              >
+                <div className={`absolute left-2 w-4 h-4 rounded-full border-4 border-gray-950 z-10 ${typeStyles[item.type]?.dot}`}></div>
+                <div className="ml-12 w-full">
+                  <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>
+                  {item.subtitle && <h4 className={`text-lg font-semibold ${typeStyles[item.type]?.icon} mb-2`}>{item.subtitle}</h4>}
+                  <div className="space-y-1 mt-2">
+                    <div className="flex items-center text-sm text-gray-400"><FaUniversity className="mr-2" /><span>{item.organization}</span></div>
+                    <div className="flex items-center text-sm text-gray-400"><FaMapMarkerAlt className="mr-2" /><span>{item.location}</span></div>
+                    <div className="flex items-center text-sm text-gray-400"><FaCalendarAlt className="mr-2" /><span>{item.year}</span></div>
                   </div>
-                  
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-gray-300">
-                      <FaUniversity className="mr-2 text-indigo-400" />
-                      <span>{item.organization}</span>
-                    </div>
-                    <div className="flex items-center text-gray-300">
-                      <FaMapMarkerAlt className="mr-2 text-indigo-400" />
-                      <span>{item.location}</span>
-                    </div>
-                    <div className="flex items-center text-gray-300">
-                      <FaCalendarAlt className="mr-2 text-indigo-400" />
-                      <span>{item.year}</span>
-                    </div>
-                  </div>
-                
-                  
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mt-4">
                     {item.highlights.map((highlight, idx) => (
                       <span
                         key={idx}
-                        className={`text-xs font-semibold px-3 py-1 rounded-full ${
-                          item.type === 'experience' 
-                            ? 'bg-green-900/50 text-emerald-300' 
-                            : 'bg-indigo-900/50 text-indigo-300'
-                        }`}
+                        className={`text-xs font-semibold px-3 py-1 rounded-full ${typeStyles[item.type]?.tagBg} ${typeStyles[item.type]?.tagText}`}
                       >
                         {highlight}
                       </span>
@@ -161,6 +159,27 @@ const EducationSection = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.div className="space-y-8" variants={sectionVariants}>
+            {extraDetails.map((item, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-900/50 border border-white/5 rounded-lg p-6 flex items-start gap-6"
+                variants={itemVariants}
+              >
+                <div className={`text-3xl mt-1 ${typeStyles[item.type]?.icon}`}>{item.icon}</div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                  <p className="text-gray-400 mt-1">{item.description}</p>
+                  {item.link && (
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:underline mt-2 inline-block">
+                      View Profile &rarr;
+                    </a>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </motion.section>
